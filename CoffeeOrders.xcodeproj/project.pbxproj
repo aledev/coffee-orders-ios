@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8D73ECAF28C2513D00D8D3DF /* HelloCoffeeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73ECAE28C2513D00D8D3DF /* HelloCoffeeApp.swift */; };
+		8D73ECAF28C2513D00D8D3DF /* CoffeeOrdersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73ECAE28C2513D00D8D3DF /* CoffeeOrdersApp.swift */; };
 		8D73ECB128C2513D00D8D3DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73ECB028C2513D00D8D3DF /* ContentView.swift */; };
 		8D73ECB328C2513E00D8D3DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D73ECB228C2513E00D8D3DF /* Assets.xcassets */; };
 		8D73ECB628C2513E00D8D3DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D73ECB528C2513E00D8D3DF /* Preview Assets.xcassets */; };
@@ -23,7 +23,7 @@
 
 /* Begin PBXFileReference section */
 		8D73ECAB28C2513C00D8D3DF /* CoffeeOrders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeOrders.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D73ECAE28C2513D00D8D3DF /* HelloCoffeeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloCoffeeApp.swift; sourceTree = "<group>"; };
+		8D73ECAE28C2513D00D8D3DF /* CoffeeOrdersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeOrdersApp.swift; sourceTree = "<group>"; };
 		8D73ECB028C2513D00D8D3DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8D73ECB228C2513E00D8D3DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D73ECB528C2513E00D8D3DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 				CE4B99502952689C0034F502 /* Extensions */,
 				CE4B9945295254370034F502 /* Utils */,
 				CE4B9948295254C90034F502 /* Order */,
-				8D73ECAE28C2513D00D8D3DF /* HelloCoffeeApp.swift */,
+				8D73ECAE28C2513D00D8D3DF /* CoffeeOrdersApp.swift */,
 				8D73ECB028C2513D00D8D3DF /* ContentView.swift */,
 				8D73ECB228C2513E00D8D3DF /* Assets.xcassets */,
 				8D73ECB428C2513E00D8D3DF /* Preview Content */,
@@ -212,7 +212,7 @@
 				CE4B9947295254580034F502 /* Constants.swift in Sources */,
 				CE4B994D295265890034F502 /* CoffeeListView.swift in Sources */,
 				8D73ECB128C2513D00D8D3DF /* ContentView.swift in Sources */,
-				8D73ECAF28C2513D00D8D3DF /* HelloCoffeeApp.swift in Sources */,
+				8D73ECAF28C2513D00D8D3DF /* CoffeeOrdersApp.swift in Sources */,
 				8D73ECC128C2522200D8D3DF /* Order.swift in Sources */,
 				CE4B995429526A300034F502 /* AppEnvironment.swift in Sources */,
 				CE4B994F2952679F0034F502 /* OrderCellView.swift in Sources */,

@@ -2,13 +2,13 @@
 //  HelloCoffeeApp.swift
 //  HelloCoffee
 //
-//  Created by Mohammad Azam on 9/2/22.
+//  Created by Alejandro Ignacio Aliaga Martinez on 20/12/22.
 //
 
 import SwiftUI
 
 @main
-struct HelloCoffeeApp: App {
+struct CoffeeOrdersApp: App {
     // MARK: - Properties
     @StateObject private var coffeeModel: CoffeeModel
     
