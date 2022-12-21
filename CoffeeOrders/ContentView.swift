@@ -8,15 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
+    // MARK: - Properties
+    @State private var isPresented: Bool = false
     
     // MARK: - Body
     var body: some View {
         
-        NavigationView {
+        NavigationStack {
          
             CoffeeListView()
                 .navigationTitle("Coffee Orders")
-                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarTitleDisplayMode(.large)
+                .fullScreenCover(isPresented: $isPresented) {                    
+                    AddCoffeeView()
+                }
+                .toolbar {
+                    
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        
+                        Button("Add New Order") {
+                            isPresented = true
+                        }
+                        .accessibilityIdentifier("addNewOrderButton")
+                        
+                    } //: ToolbarItem
+                    
+                } //: Toolbar
+                .ignoresSafeArea(.all)
             
         } //: NavigationView
         
@@ -28,8 +46,18 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     
     static var previews: some View {
+        
+        var config = Configuration()
+        
         ContentView()
-            .environmentObject(CoffeeModel(orderService: OrderService()))
+            .environmentObject(
+                CoffeeModel(
+                    orderService: OrderService(
+                        baseURL: config.environment.baseURL
+                    )
+                )
+            )
+        
     }
     
 }

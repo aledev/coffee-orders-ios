@@ -21,16 +21,47 @@ class CoffeeModel: ObservableObject {
     }
     
     // MARK: - Functions
-    func populateOrders() async throws {
+    func populateOrders() async {
         self.isLoading = true
         
         do {
             self.orders = try await orderService.getOrders()
         } catch {
-            throw error
+            self.orders = []
+            debugPrint("Error: \(error)")
         }
        
         self.isLoading = false
+    }
+    
+    func refreshOrders() async {
+        do {
+            self.orders = try await orderService.getOrders()
+        } catch {
+            self.orders = []
+        }
+    }
+    
+    func placeOrder(_ order: Order) async {
+        self.isLoading = true
+        
+        do {
+            let newOrder = try await orderService.placeOrder(order: order)
+            orders.append(newOrder)
+        } catch {
+            debugPrint("Error: \(error)")
+        }
+        
+        self.isLoading = false
+    }
+    
+    func deleteOrder(_ orderId: Int) async {
+        do {
+            let deletedOrder = try await orderService.deleteOrder(orderId: orderId)
+            orders = orders.filter { $0.id != deletedOrder.id }
+        } catch {
+            debugPrint("Error: \(error)")
+        }
     }
     
 }

@@ -11,45 +11,72 @@ struct CoffeeListView: View {
     // MARK: - Properties
     @EnvironmentObject private var model: CoffeeModel
     
-    // MARK: - Functions
-    private func populateOrders() async {
-        do {
-            try await model.populateOrders()
-        } catch {
-            debugPrint(error)
+    private func deleteOrder(_ indexSet: IndexSet) {
+        indexSet.forEach { index in
+            let order = model.orders[index]
+            guard let orderId = order.id else {
+                return
+            }
+            
+            Task {
+                await model.deleteOrder(orderId)
+            }
         }
     }
     
     // MARK: - Body
     var body: some View {
         
-        VStack {
+        NavigationView {
             
-            if model.isLoading {
+            VStack {
                 
-                HStack(spacing: 10) {
+                if model.isLoading {
                     
-                    ProgressView() //: ProgressView
+                    HStack(spacing: 10) {
+                        
+                        ProgressView() //: ProgressView
+                        
+                        Text("Loading Orders...")
+                            .font(.body)
+                        
+                    } //: HStack
                     
-                    Text("Loading Orders...")
-                        .font(.body)
+                } else {
                     
-                } //: HStack
+                    if model.orders.isEmpty {
+                        
+                        Text("No orders available!")
+                            .font(.body)
+                            .accessibilityIdentifier("noOrdersText")
+                        
+                    } else {
+                        
+                        List{
+                            
+                            ForEach(model.orders) { order in
+                                
+                                OrderCellView(order: order)
+                                
+                            } //: ForEach
+                            .onDelete(perform: deleteOrder)
+                            
+                        } //: List
+                        .accessibilityIdentifier("orderList")
+                        .refreshable {
+                            await model.refreshOrders()
+                        }
+                        
+                    }
+                    
+                } //: Else
                 
-            } else {
-                
-                List(model.orders) { order in
-                    
-                    OrderCellView(order: order)
-                    
-                } //: List
-                
-            } //: Else
+            } //: VStack
+            .task {
+                await model.populateOrders()
+            }
             
-        } //: VStack
-        .task {
-            await populateOrders()
-        }
+        } //: NavigationView        
         
     } //: Body
     
@@ -60,8 +87,11 @@ struct CoffeeListView_Previews: PreviewProvider {
     
     static var previews: some View {
         
+        var config = Configuration()
+        
         CoffeeListView()
-            .environmentObject(CoffeeModel(orderService: OrderService()))
+            .environmentObject(CoffeeModel(orderService: OrderService(baseURL: config.environment.baseURL)))
+        
         
     }
 }

@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+enum CoffeeSize: String, Codable, CaseIterable {
+    case small = "Small"
+    case medium = "Medium"
+    case large = "Large"
+}

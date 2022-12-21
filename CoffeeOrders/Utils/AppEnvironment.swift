@@ -9,11 +9,20 @@ import Foundation
 
 enum Endpoints {
     case allOrders
+    case placeOrder
+    case clearOrders
+    case deleteOrder(Int)
     
     var path: String {
         switch self {
         case .allOrders:
             return "/test/orders"
+        case .placeOrder:
+            return "/test/new-order"
+        case .clearOrders:
+            return "/test/clear-orders"
+        case .deleteOrder(let id):
+            return "/test/orders/\(id)"
         }
     }
 }
@@ -37,7 +46,7 @@ struct Configuration {
     lazy var environment: AppEnvironment = {
         // Read value from environment variable
         guard let env = ProcessInfo.processInfo.environment["ENV"] else {
-            return .dev
+            return .qa
         }
         
         if env == "QA" {
