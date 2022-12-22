@@ -45,10 +45,16 @@ struct CoffeeListView: View {
                 } else {
                     
                     if model.orders.isEmpty {
-                        
-                        Text("No orders available!")
-                            .font(.body)
-                            .accessibilityIdentifier("noOrdersText")
+                                                
+                        ScrollView {
+                         
+                            NoDataView(message: "No orders available!")
+                                .padding()
+                            
+                        } //: ScrollView
+                        .refreshable {
+                            await model.refreshOrders()
+                        }
                         
                     } else {
                         
@@ -56,22 +62,32 @@ struct CoffeeListView: View {
                             
                             ForEach(model.orders) { order in
                                 
-                                OrderCellView(order: order)
+                                NavigationLink(value: order.id) {
+                                    
+                                    OrderCellView(order: order)
+                                    
+                                } //: NavigationLink
                                 
                             } //: ForEach
                             .onDelete(perform: deleteOrder)
                             
                         } //: List
+                        .listStyle(.inset)
                         .accessibilityIdentifier("orderList")
                         .refreshable {
                             await model.refreshOrders()
                         }
                         
-                    }
+                    } //: Else
                     
                 } //: Else
                 
             } //: VStack
+            .navigationDestination(for: Int.self, destination: { orderId in
+                
+                OrderDetailView(orderId: orderId)
+                
+            })
             .task {
                 await model.populateOrders()
             }

@@ -36,7 +36,7 @@ struct ContentView: View {
                 } //: Toolbar
                 .ignoresSafeArea(.all)
             
-        } //: NavigationView
+        } //: NavigationView        
         
     } //: Body
     

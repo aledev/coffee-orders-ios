@@ -13,6 +13,7 @@ class CoffeeModel: ObservableObject {
     // MARK: - Properties
     let orderService: OrderService
     @Published private(set) var orders: [Order] = []
+    @Published private(set) var order: Order? = nil
     @Published private(set) var isLoading = false
     
     // MARK: - Initializer
@@ -21,6 +22,14 @@ class CoffeeModel: ObservableObject {
     }
     
     // MARK: - Functions
+    func orderById(_ id: Int) async {
+        do {
+            self.order = try await orderService.getOrder(id)
+        } catch {
+            debugPrint("Error while trying the order by id. Detail: \(error)")
+        }
+    }
+    
     func populateOrders() async {
         self.isLoading = true
         
@@ -59,6 +68,18 @@ class CoffeeModel: ObservableObject {
         do {
             let deletedOrder = try await orderService.deleteOrder(orderId: orderId)
             orders = orders.filter { $0.id != deletedOrder.id }
+        } catch {
+            debugPrint("Error: \(error)")
+        }
+    }
+    
+    func updateOrder(_ order: Order) async {
+        do {
+            let updateOrder = try await orderService.updateOrder(order)
+            guard let index = orders.firstIndex(where: { $0.id == updateOrder.id }) else {
+                throw CoffeeOrderError.invalidOrderId
+            }
+            orders[index] = updateOrder
         } catch {
             debugPrint("Error: \(error)")
         }
