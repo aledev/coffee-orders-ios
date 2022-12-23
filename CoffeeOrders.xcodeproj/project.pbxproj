@@ -25,6 +25,7 @@
 		CE20EE2A2954B5040012EEE1 /* EditOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20EE292954B5040012EEE1 /* EditOrderView.swift */; };
 		CE20EE2C2954E6AB0012EEE1 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20EE2B2954E6AB0012EEE1 /* NoDataView.swift */; };
 		CE20EE2F2955021F0012EEE1 /* XCUIElement+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20EE2E2955021F0012EEE1 /* XCUIElement+Extension.swift */; };
+		CE20EE312955D5AB0012EEE1 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20EE302955D5AB0012EEE1 /* NetworkError.swift */; };
 		CE4B994A295259AE0034F502 /* CoffeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B9949295259AE0034F502 /* CoffeeModel.swift */; };
 		CE4B994D295265890034F502 /* CoffeeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B994C295265890034F502 /* CoffeeListView.swift */; };
 		CE4B994F2952679F0034F502 /* OrderCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B994E2952679F0034F502 /* OrderCellView.swift */; };
@@ -63,6 +64,7 @@
 		CE20EE292954B5040012EEE1 /* EditOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditOrderView.swift; sourceTree = "<group>"; };
 		CE20EE2B2954E6AB0012EEE1 /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 		CE20EE2E2955021F0012EEE1 /* XCUIElement+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+Extension.swift"; sourceTree = "<group>"; };
+		CE20EE302955D5AB0012EEE1 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		CE4B9949295259AE0034F502 /* CoffeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeModel.swift; sourceTree = "<group>"; };
 		CE4B994C295265890034F502 /* CoffeeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeListView.swift; sourceTree = "<group>"; };
 		CE4B994E2952679F0034F502 /* OrderCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCellView.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				CE4B995329526A300034F502 /* AppEnvironment.swift */,
 				CE20EE212954A3320012EEE1 /* Endpoints.swift */,
 				CE20EE232954A34D0012EEE1 /* Configuration.swift */,
+				CE20EE302955D5AB0012EEE1 /* NetworkError.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				CE4B994F2952679F0034F502 /* OrderCellView.swift in Sources */,
 				CE20EE282954A6AF0012EEE1 /* OrderDetailView.swift in Sources */,
 				CE20EE1C2953868D0012EEE1 /* String+Extension.swift in Sources */,
+				CE20EE312955D5AB0012EEE1 /* NetworkError.swift in Sources */,
 				CE20EE2A2954B5040012EEE1 /* EditOrderView.swift in Sources */,
 				CE20EE202954A3000012EEE1 /* CoffeeOrderError.swift in Sources */,
 				CE20EE242954A34D0012EEE1 /* Configuration.swift in Sources */,

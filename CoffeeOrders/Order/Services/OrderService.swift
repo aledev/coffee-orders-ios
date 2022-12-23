@@ -7,13 +7,6 @@
 
 import Foundation
 
-enum NetworkError: Error {
-    case badRequest
-    case encodingError
-    case decodingError
-    case badUrl
-}
-
 class OrderService {
     
     private var baseURL: URL

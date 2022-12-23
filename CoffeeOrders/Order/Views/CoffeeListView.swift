@@ -11,6 +11,7 @@ struct CoffeeListView: View {
     // MARK: - Properties
     @EnvironmentObject private var model: CoffeeModel
     
+    // MARK: - Functions
     private func deleteOrder(_ indexSet: IndexSet) {
         indexSet.forEach { index in
             let order = model.orders[index]
@@ -106,8 +107,13 @@ struct CoffeeListView_Previews: PreviewProvider {
         var config = Configuration()
         
         CoffeeListView()
-            .environmentObject(CoffeeModel(orderService: OrderService(baseURL: config.environment.baseURL)))
-        
+            .environmentObject(
+                CoffeeModel(
+                    orderService: OrderService(
+                        baseURL: config.environment.baseURL
+                    )
+                )
+            )
         
     }
 }

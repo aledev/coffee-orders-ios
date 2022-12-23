@@ -141,27 +141,36 @@ struct OrderDetailView: View {
 struct OrderDetailView_Previews: PreviewProvider {
     
     static var previews: some View {
-        var config = Configuration()
+                
+        let coffeeModel = ({ () -> CoffeeModel in
+            var config = Configuration()
+            let orderService = OrderService(baseURL: config.environment.baseURL)
+            let model = CoffeeModel(orderService: orderService)
+            
+            let order = Order(
+                id: 1,
+                name: "Ale",
+                coffeeName: "Flat White",
+                total: 4.5,
+                size: .large
+            )
+            
+            model.order = order
+            
+            return model
+        })
         
         // Theme: Light
         OrderDetailView(orderId: 1)
             .environmentObject(
-                CoffeeModel(
-                    orderService: OrderService(
-                        baseURL: config.environment.baseURL
-                    )
-                )
+                coffeeModel()
             )
             .preferredColorScheme(.light)
         
         // Theme: Dark
         OrderDetailView(orderId: 1)
             .environmentObject(
-                CoffeeModel(
-                    orderService: OrderService(
-                        baseURL: config.environment.baseURL
-                    )
-                )
+                coffeeModel()
             )
             .preferredColorScheme(.dark)
         

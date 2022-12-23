@@ -12,8 +12,8 @@ class CoffeeModel: ObservableObject {
     
     // MARK: - Properties
     let orderService: OrderService
-    @Published private(set) var orders: [Order] = []
-    @Published private(set) var order: Order? = nil
+    @Published var orders: [Order] = []
+    @Published var order: Order? = nil
     @Published private(set) var isLoading = false
     
     // MARK: - Initializer
@@ -48,6 +48,7 @@ class CoffeeModel: ObservableObject {
             self.orders = try await orderService.getOrders()
         } catch {
             self.orders = []
+            debugPrint("Error: \(error)")
         }
     }
     
