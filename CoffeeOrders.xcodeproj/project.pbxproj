@@ -26,6 +26,7 @@
 		CE20EE2C2954E6AB0012EEE1 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20EE2B2954E6AB0012EEE1 /* NoDataView.swift */; };
 		CE20EE2F2955021F0012EEE1 /* XCUIElement+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20EE2E2955021F0012EEE1 /* XCUIElement+Extension.swift */; };
 		CE20EE312955D5AB0012EEE1 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20EE302955D5AB0012EEE1 /* NetworkError.swift */; };
+		CE20EE332955E4B00012EEE1 /* AddCoffeeErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20EE322955E4B00012EEE1 /* AddCoffeeErrors.swift */; };
 		CE4B994A295259AE0034F502 /* CoffeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B9949295259AE0034F502 /* CoffeeModel.swift */; };
 		CE4B994D295265890034F502 /* CoffeeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B994C295265890034F502 /* CoffeeListView.swift */; };
 		CE4B994F2952679F0034F502 /* OrderCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B994E2952679F0034F502 /* OrderCellView.swift */; };
@@ -65,6 +66,7 @@
 		CE20EE2B2954E6AB0012EEE1 /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 		CE20EE2E2955021F0012EEE1 /* XCUIElement+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+Extension.swift"; sourceTree = "<group>"; };
 		CE20EE302955D5AB0012EEE1 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		CE20EE322955E4B00012EEE1 /* AddCoffeeErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeErrors.swift; sourceTree = "<group>"; };
 		CE4B9949295259AE0034F502 /* CoffeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeModel.swift; sourceTree = "<group>"; };
 		CE4B994C295265890034F502 /* CoffeeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeListView.swift; sourceTree = "<group>"; };
 		CE4B994E2952679F0034F502 /* OrderCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCellView.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				8D73ECC028C2522200D8D3DF /* Order.swift */,
 				CE4B9949295259AE0034F502 /* CoffeeModel.swift */,
+				CE20EE322955E4B00012EEE1 /* AddCoffeeErrors.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				CE4B994A295259AE0034F502 /* CoffeeModel.swift in Sources */,
 				CE20EE1A295375F70012EEE1 /* View+Extension.swift in Sources */,
 				CE20EE14295365CC0012EEE1 /* AddCoffeeView.swift in Sources */,
+				CE20EE332955E4B00012EEE1 /* AddCoffeeErrors.swift in Sources */,
 				CE20EE222954A3320012EEE1 /* Endpoints.swift in Sources */,
 				CE4B9952295268EC0034F502 /* NumberFormatter+Extension.swift in Sources */,
 			);

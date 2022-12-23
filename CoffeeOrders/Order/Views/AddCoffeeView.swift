@@ -7,18 +7,6 @@
 
 import SwiftUI
 
-struct AddCoffeeErrors {
-    var name: String = ""
-    var coffeeName: String = ""
-    var price: String = ""
-    
-    var fieldsAreEmpty: Bool {
-        return name.isEmpty &&
-        coffeeName.isEmpty &&
-        price.isEmpty
-    }
-}
-
 struct AddCoffeeView: View {
     // MARK: - Properties
     @EnvironmentObject private var coffeeModel: CoffeeModel
